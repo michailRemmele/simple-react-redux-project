@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+.list {
+  padding: 0;
+  margin: 0;
+  font-family: $font-default;
+  font-size: 15px;
+
+  &__item {
+    box-sizing: border-box;
+    list-style: none;
+    margin-top: 5px;
+    background-color: $color-lightest-grey;
+    border-radius: 5px;
+    border: solid 1px $color-light-grey;
+    padding: 9px 20px;
+    width: 100%;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

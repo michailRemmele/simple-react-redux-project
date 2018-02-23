@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+
+.form-field {
+  box-sizing: border-box;
+  display: block;
+  background-color: $color-lightest-grey;
+  border-radius: 5px;
+  border: solid 1px $color-light-grey;
+  padding: 9px 20px;
+  width: 100%;
+  font-family: $font-default;
+  font-size: 15px;
+
+  &:focus {
+    outline: none;
+    border: solid 1px $color-blue;
+  }
+}

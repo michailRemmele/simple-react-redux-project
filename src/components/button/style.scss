@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+
+.button {
+  background-color: $color-blue;
+  border-radius: 5px;
+  color: $color-white;
+  padding: 10px 20px;
+  border: none;
+  font-family: $font-default;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-dark-blue;
+  }
+  &:disabled {
+    background-color: $color-grey;
+    cursor: auto;
+  }
+}
