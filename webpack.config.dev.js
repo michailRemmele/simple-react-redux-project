@@ -12,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: paths.build,
+    contentBase: paths.public,
     watchContentBase: true,
     inline: true,
     open: true,
