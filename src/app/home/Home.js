@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { addNewValue } from './actions';
+import { getItemList, addNewValue } from './actions';
 
 import Button from '../../components/button/Button';
 import FormField from '../../components/formField/FormField';
 import List from '../../components/list/List';
+import Spinner from '../../components/spinner/Spinner';
 
 import './style.scss';
 
@@ -17,6 +18,10 @@ class Home extends React.Component {
       value: ''
     };
   };
+
+  componentDidMount() {
+    this.props.getItemList();
+  }
 
   handleChange = (event) => {
     this.setState({
@@ -33,6 +38,8 @@ class Home extends React.Component {
   };
 
   render() {
+    const { itemList, itemListPending } = this.props;
+
     return (
       <React.Fragment>
         <form
@@ -48,19 +55,22 @@ class Home extends React.Component {
             disabled={this.state.value.length === 0}
           />
         </form>
-        <List classes='home__list' itemList={this.props.itemList}/>
+        <List classes='home__list' itemList={itemList}/>
+        {itemListPending ? <Spinner classes='home__spinner' /> : null}
       </React.Fragment>
     );
   };
-};
+}
 
 const mapStateToProps = (state) => {
   return {
     itemList: state.homeReducer.itemList,
+    itemListPending: state.homeReducer.itemListPending
   }
 };
 
 const mapDispatchToProps = (dispatch) => ({
+  getItemList: bindActionCreators(getItemList, dispatch),
   addNewValue: bindActionCreators(addNewValue, dispatch)
 });
 

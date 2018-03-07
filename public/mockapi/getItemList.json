@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "errors": null,
+  "itemList": [
+    {
+      "id": 0,
+      "value": "item0"
+    },
+    {
+      "id": 1,
+      "value": "item1"
+    },
+    {
+      "id": 2,
+      "value": "item2"
+    },
+    {
+      "id": 3,
+      "value": "item3"
+    },
+    {
+      "id": 4,
+      "value": "item4"
+    }
+  ]
+}
