@@ -22,7 +22,8 @@ module.exports = {
   output: {
     path: paths.build,
     filename: '[name].[hash].js',
-    library: '[name]'
+    library: '[name]',
+    publicPath: '/'
   },
 
   watch: true,
